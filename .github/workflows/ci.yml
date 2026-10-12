@@ -1,0 +1,29 @@
+name: CI
+
+# The site itself is built and deployed by Netlify.
+# This workflow only checks that every Java example still compiles and runs.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  java-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Run Java examples
+        run: |
+          for f in examples/*/*.java; do
+            echo "▶ $f"
+            java "$f"
+          done

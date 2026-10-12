@@ -3,10 +3,11 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // ---------------------------------------------------------------------------
-// 👉 Change these two values to match your GitHub account and repo name.
+// 👉 SITE_URL is your Netlify address (or custom domain), without a trailing slash.
 // ---------------------------------------------------------------------------
-const GITHUB_USERNAME = 'YOUR_GITHUB_USERNAME';
+const GITHUB_USERNAME = 'Vishal1938';
 const REPO_NAME = 'java-interview-notes';
+const SITE_URL = 'https://java-interview-notes.netlify.app';
 
 const config: Config = {
   title: 'Java Interview Notes',
@@ -17,8 +18,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: `https://${GITHUB_USERNAME}.github.io`,
-  baseUrl: `/${REPO_NAME}/`,
+  url: SITE_URL,
+  baseUrl: '/',
   organizationName: GITHUB_USERNAME,
   projectName: REPO_NAME,
   trailingSlash: false,

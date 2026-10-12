@@ -59,24 +59,15 @@ docusaurus.config.ts      ← site settings (title, GitHub username…)
 3. Add at least one question inside it.
 4. *(Optional)* Add a card for it in `src/pages/index.tsx` and a link in the footer of `docusaurus.config.ts`.
 
-## 5. Publish to GitHub Pages (free)
+## 5. Deploy on Netlify
 
-1. Open `docusaurus.config.ts` and set `GITHUB_USERNAME` to your GitHub username.
-   If you name the repo something other than `java-interview-notes`, change `REPO_NAME` too.
-2. Create a new **public** repo on GitHub with that name.
-3. Push the project:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial site"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/java-interview-notes.git
-   git push -u origin main
-   ```
-4. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+The site is deployed by Netlify; build settings live in `netlify.toml`
+(`npm run build`, publish directory `build`, Node 20).
 
-Every push to `main` now runs all Java examples, builds the site and deploys it to
-`https://<your-username>.github.io/java-interview-notes/`.
+1. In `docusaurus.config.ts`, set `SITE_URL` to your Netlify address (or custom domain).
+2. Push to `main`. Netlify builds and publishes the site automatically.
+
+A GitHub Actions workflow (`.github/workflows/ci.yml`) also runs every Java example on each push and pull request.
 
 ## 6. Reuse a question as a blog post
 
