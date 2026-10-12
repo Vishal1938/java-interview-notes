@@ -75,8 +75,16 @@ A GitHub Actions workflow (`.github/workflows/ci.yml`) also runs every Java exam
 
 ## 6. Admin panel
 
-Open **`/admin`** on the deployed site (e.g. `https://<your-site>.netlify.app/admin`) to add and
-edit questions in the browser with [Sveltia CMS](https://github.com/sveltia/sveltia-cms).
+Open **https://java-interview-notes.netlify.app/admin** to add and edit questions in the browser
+with [Sveltia CMS](https://github.com/sveltia/sveltia-cms).
+
+**Who can do what**
+
+- **Readers** never need to sign in. Every page except `/admin` is public, and there is no
+  "Edit this page" link.
+- **Editors** sign in at `/admin`. Saving needs write access to the GitHub repo, so anyone else who
+  signs in can't change the site. To add an editor, invite them under the repo's
+  **Settings → Collaborators**.
 
 - Each topic folder in `docs/` appears as a collection. **New Question** starts from the standard
   answer template (short answer, explanation, code, output, follow-ups, takeaways).
@@ -99,7 +107,7 @@ There are two ways to sign in:
 **Option B: sign in with GitHub**
 
 1. On GitHub go to **Settings → Developer settings → OAuth Apps → New OAuth App**:
-   - **Homepage URL:** your Netlify site URL
+   - **Homepage URL:** `https://java-interview-notes.netlify.app`
    - **Authorization callback URL:** `https://api.netlify.com/auth/done`
 2. Copy the **Client ID** and generate a **Client secret**.
 3. In Netlify go to **Project configuration → Access & security → OAuth → Install provider → GitHub**

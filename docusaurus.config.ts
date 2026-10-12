@@ -43,7 +43,7 @@ const config: Config = {
           routeBasePath: 'questions',
           sidebarPath: './sidebars.ts',
           showLastUpdateTime: false,
-          editUrl: `https://github.com/${GITHUB_USERNAME}/${REPO_NAME}/edit/main/`,
+          // No "Edit this page" link: readers only read; editing happens in /admin.
         },
         // Blog posts go to Medium / Dev.to, so the built-in blog is off.
         blog: false,
