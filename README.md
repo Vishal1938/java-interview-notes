@@ -58,18 +58,55 @@ docusaurus.config.ts      ← site settings (title, GitHub username…)
    ```
 3. Add at least one question inside it.
 4. *(Optional)* Add a card for it in `src/pages/index.tsx` and a link in the footer of `docusaurus.config.ts`.
+5. To edit it from the admin panel, copy one of the topic collections in `static/admin/config.yml`
+   and change its `name`, `label` and `folder`.
 
 ## 5. Deploy on Netlify
 
 The site is deployed by Netlify; build settings live in `netlify.toml`
-(`npm run build`, publish directory `build`, Node 20).
+(`npm run build`, publish directory `build`, Node 20). Push to `main` and Netlify
+builds and publishes the site automatically.
 
-1. In `docusaurus.config.ts`, set `SITE_URL` to your Netlify address (or custom domain).
-2. Push to `main`. Netlify builds and publishes the site automatically.
+`docusaurus.config.ts` detects Netlify through the `NETLIFY` environment variable and then
+serves the site from the domain root, using Netlify's `URL` as the site address. Builds
+anywhere else keep the GitHub Pages paths (`https://Vishal1938.github.io/java-interview-notes/`).
 
 A GitHub Actions workflow (`.github/workflows/ci.yml`) also runs every Java example on each push and pull request.
 
-## 6. Reuse a question as a blog post
+## 6. Admin panel
+
+Open **`/admin`** on the deployed site (e.g. `https://<your-site>.netlify.app/admin`) to add and
+edit questions in the browser with [Sveltia CMS](https://github.com/sveltia/sveltia-cms).
+
+- Each topic folder in `docs/` appears as a collection. **New Question** starts from the standard
+  answer template (short answer, explanation, code, output, follow-ups, takeaways).
+- **Sidebar label** is also used as the file name, and **Order in topic** sets `sidebar_position`.
+- Images you upload are saved to `static/img/uploads/`.
+- Every save is a commit to `main` on GitHub (e.g. `Add question: hashmap-internals`), and that
+  commit triggers a new Netlify deploy. Changes appear on the site after the deploy finishes, usually in 1–2 minutes.
+- Settings live in `static/admin/config.yml`.
+
+The Netlify site must be connected to this GitHub repo (not a drag-and-drop deploy).
+There are two ways to sign in:
+
+**Option A: sign in with a token (quickest)**
+
+1. On GitHub go to **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**.
+2. Under **Repository access**, choose **Only select repositories** → `Vishal1938/java-interview-notes`.
+3. Under **Repository permissions**, set **Contents** to **Read and write**.
+4. Open `/admin`, click **Sign In with Token**, and paste the token.
+
+**Option B: sign in with GitHub**
+
+1. On GitHub go to **Settings → Developer settings → OAuth Apps → New OAuth App**:
+   - **Homepage URL:** your Netlify site URL
+   - **Authorization callback URL:** `https://api.netlify.com/auth/done`
+2. Copy the **Client ID** and generate a **Client secret**.
+3. In Netlify go to **Project configuration → Access & security → OAuth → Install provider → GitHub**
+   and paste the Client ID and secret.
+4. Open `/admin` and click **Sign In with GitHub**.
+
+## 7. Reuse a question as a blog post
 
 The pages use plain Markdown on purpose, so they move cleanly to other platforms.
 

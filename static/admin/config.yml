@@ -1,0 +1,111 @@
+# Sveltia CMS configuration: the admin panel served at /admin.
+# Every save is a Git commit to the repo below, which triggers a Netlify deploy.
+
+backend:
+  name: github
+  repo: Vishal1938/java-interview-notes
+  branch: main
+  commit_messages:
+    create: "Add question: {{slug}}"
+    update: "Update question: {{slug}}"
+    delete: "Delete question: {{slug}}"
+
+media_folder: static/img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: core-java
+    label: Core Java
+    label_singular: Question
+    folder: docs/core-java
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{sidebar_label}}"
+    identifier_field: title
+    summary: "{{sidebar_position}}. {{title}}"
+    sortable_fields: [sidebar_position, title]
+    # Shared by every topic collection; matches the front matter used in docs/.
+    fields: &question_fields
+    - { name: title, label: Question, widget: string }
+    - { name: sidebar_label, label: Sidebar label, widget: string, hint: "Short name shown in the sidebar. Also used as the file name." }
+    - { name: sidebar_position, label: Order in topic, widget: number, value_type: int, default: 10 }
+    - { name: description, label: Summary, widget: string, required: false }
+    - { name: tags, label: Tags, widget: list, required: false }
+    - name: body
+      label: Answer
+      widget: markdown
+      default: |
+        > **Short answer:** Write the 2–3 line interview answer here.
+
+        ## Detailed explanation
+
+        ## Code example
+
+        ```java title="YourClass.java"
+        public class YourClass {
+            public static void main(String[] args) {
+            }
+        }
+        ```
+
+        **Output:**
+
+        ```text
+        ```
+
+        ## Common follow-ups & pitfalls
+
+        ## Key takeaways
+
+  - name: collections
+    label: Collections
+    label_singular: Question
+    folder: docs/collections
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{sidebar_label}}"
+    identifier_field: title
+    summary: "{{sidebar_position}}. {{title}}"
+    sortable_fields: [sidebar_position, title]
+    fields: *question_fields
+
+  - name: multithreading
+    label: Multithreading & Concurrency
+    label_singular: Question
+    folder: docs/multithreading
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{sidebar_label}}"
+    identifier_field: title
+    summary: "{{sidebar_position}}. {{title}}"
+    sortable_fields: [sidebar_position, title]
+    fields: *question_fields
+
+  - name: java8-features
+    label: Java 8+ Features
+    label_singular: Question
+    folder: docs/java8-features
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{sidebar_label}}"
+    identifier_field: title
+    summary: "{{sidebar_position}}. {{title}}"
+    sortable_fields: [sidebar_position, title]
+    fields: *question_fields
+
+  - name: pages
+    label: Pages
+    files:
+      - name: intro
+        label: Start Here (intro)
+        file: docs/intro.md
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: id, widget: hidden, default: intro }
+          - { name: sidebar_position, widget: hidden, default: 0 }
+          - { name: slug, widget: hidden, default: / }
+          - { name: body, label: Body, widget: markdown }

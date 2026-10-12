@@ -4,3 +4,9 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# Keep the CMS admin panel out of search engines.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
