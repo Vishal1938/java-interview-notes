@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>Admin · Java Interview Notes</title>
+    <style>
+      /* Sveltia widens the editor/preview divider's grab area by 10px on each side,
+         which covers the editor's scrollbar and shows a resize cursor over it.
+         Keep the grab area off the editor side; let it extend only into the preview. */
+      .resizable-handle.horizontal::before {
+        inset-inline: 0 -8px !important;
+      }
+    </style>
   </head>
   <body>
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
