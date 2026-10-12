@@ -1,0 +1,9 @@
+{
+  "label": "Core Java",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "slug": "/core-java",
+    "description": "OOP, String, equality, keywords, exceptions and the JVM basics."
+  }
+}

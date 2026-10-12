@@ -1,0 +1,52 @@
+/* Global styles. Colors use a warm "coffee" palette that suits a Java site. */
+
+:root {
+  --ifm-color-primary: #c25e00;
+  --ifm-color-primary-dark: #af5500;
+  --ifm-color-primary-darker: #a55000;
+  --ifm-color-primary-darkest: #884200;
+  --ifm-color-primary-light: #d56700;
+  --ifm-color-primary-lighter: #df6c00;
+  --ifm-color-primary-lightest: #ff7f0a;
+  --ifm-code-font-size: 92%;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --docusaurus-highlighted-code-line-bg: rgba(194, 94, 0, 0.12);
+  --card-bg: #fffaf5;
+  --card-border: #f0dcc8;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #ffa04d;
+  --ifm-color-primary-dark: #ff8f2b;
+  --ifm-color-primary-darker: #ff861a;
+  --ifm-color-primary-darkest: #e66d00;
+  --ifm-color-primary-light: #ffb16f;
+  --ifm-color-primary-lighter: #ffba80;
+  --ifm-color-primary-lightest: #ffd3b3;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 160, 77, 0.15);
+  --card-bg: #23201d;
+  --card-border: #3a332c;
+}
+
+/* The "Short answer" blockquote at the top of each question */
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  background: var(--card-bg);
+  border-radius: 0 8px 8px 0;
+  padding: 0.9rem 1.1rem;
+  color: var(--ifm-font-color-base);
+}
+
+.markdown blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Output blocks look slightly different from code */
+.markdown pre.language-text {
+  opacity: 0.95;
+}
+
+.markdown table {
+  display: table;
+  width: 100%;
+}

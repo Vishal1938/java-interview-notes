@@ -1,0 +1,9 @@
+{
+  "label": "Collections",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "slug": "/collections",
+    "description": "List, Set, Map, their internals and how to choose between them."
+  }
+}
