@@ -1,6 +1,6 @@
 ---
-title: What is the `final` keyword in Java?
-sidebar_label: `final` Variables
+title: "What is the `final` keyword in Java?"
+sidebar_label: "`final` Variables"
 sidebar_position: 3
 description: Learn how final variables work in Java, when they must be initialized, and how instance and static final fields differ.
 tags: [core-java, variables, final, beginner]
