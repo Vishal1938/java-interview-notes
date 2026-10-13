@@ -1,6 +1,6 @@
 ---
 title: What is the difference between `this` and `super` in Java?
-sidebar_label: `this` vs `super`
+sidebar_label: "`this` vs `super`"
 sidebar_position: 12
 description: Understand Java's this and super keywords, field and method access, constructor chaining, inheritance, and cyclic constructor invocation.
 tags: [core-java, this, super, constructors, inheritance, beginner]
