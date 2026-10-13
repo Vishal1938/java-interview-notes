@@ -2,7 +2,7 @@
 title: What are OOP concepts in Java?
 sidebar_label: OOP Concepts
 sidebar_position: 6
-description: Learn the four pillars of object-oriented programming in Java: encapsulation, inheritance, polymorphism, and abstraction, with examples and interview questions.
+description: "Learn the four pillars of object-oriented programming in Java: encapsulation, inheritance, polymorphism, and abstraction, with examples and interview questions."
 tags: [core-java, oops, encapsulation, inheritance, polymorphism, abstraction, beginner]
 ---
 
