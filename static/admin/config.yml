@@ -97,6 +97,19 @@ collections:
     sortable_fields: [sidebar_position, title]
     fields: *question_fields
 
+  - name: design-patterns
+    label: Design Patterns
+    label_singular: Question
+    folder: docs/design-patterns
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{sidebar_label}}"
+    identifier_field: title
+    summary: "{{sidebar_position}}. {{title}}"
+    sortable_fields: [sidebar_position, title]
+    fields: *question_fields
+
   - name: pages
     label: Pages
     files:

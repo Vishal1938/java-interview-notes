@@ -27,6 +27,7 @@ docs/                     ← all your questions live here
   collections/
   multithreading/
   java8-features/
+  design-patterns/
 examples/                 ← runnable .java file for every question
   core-java/EqualsVsDoubleEquals.java
 templates/

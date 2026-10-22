@@ -27,5 +27,6 @@ Every page follows the same shape, so it works for quick revision *and* as a ful
 - [Collections](/questions/collections)
 - [Multithreading & Concurrency](/questions/multithreading)
 - [Java 8+ Features](/questions/java8-features)
+- [Design Patterns](/questions/design-patterns)
 
 Use the search bar at the top to jump to any question.

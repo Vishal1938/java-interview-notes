@@ -111,6 +111,7 @@ const config: Config = {
           title: 'More',
           items: [
             {label: 'Java 8+', to: '/questions/java8-features'},
+            {label: 'Design Patterns', to: '/questions/design-patterns'},
             {label: 'Start here', to: '/questions'},
             {
               label: 'GitHub',

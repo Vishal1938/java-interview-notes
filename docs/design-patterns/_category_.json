@@ -1,0 +1,9 @@
+{
+  "label": "Design Patterns",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "slug": "/design-patterns",
+    "description": "Creational, structural and behavioral patterns with Java examples."
+  }
+}

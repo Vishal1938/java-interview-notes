@@ -28,6 +28,11 @@ const TOPICS = [
     to: '/questions/java8-features',
     description: 'Lambdas, streams, Optional and modern language features.',
   },
+  {
+    title: 'Design Patterns',
+    to: '/questions/design-patterns',
+    description: 'Creational, structural and behavioral patterns in Java.',
+  },
 ];
 
 export default function Home(): ReactNode {
